@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: mgrakspipelinelab 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mgrakspipelinelab
+  template:
+    metadata:
+      labels:
+        app: mgrakspipelinelab 
+    spec:
+      containers:
+        - name: mgrakspipelinelab 
+          image: crgmgrlabaks.azurecr.io/mgrakspipelinelab
+          ports:
+          - containerPort: 8080
